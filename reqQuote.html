@@ -11,7 +11,13 @@
 * {
     box-sizing: border-box;
 }
-
+ins [type=text], select, textarea {
+    width: 50%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
 input[type=text], select, textarea {
     width: 50%;
     padding: 12px;
@@ -154,7 +160,7 @@ select option
         <label for="Delivery">Delivery Date:</label>
       </div>
       <div class="col-75">
-        <input type="Date" id="Delivery" name="DeliveryDate" placeholder="Date">
+        <input type="Date" id="Delivery" name="DeliveryDate" min="2018-09-21" placeholder="Date">
       </div>
     </div>
     <div class="row">
@@ -251,13 +257,21 @@ select option
       </div>
     </div>
     <div class="row">
+
       <div class="col-25">
         <label for="Suggestion">Suggested Price per Gallon:</label>
       </div>
+      <div class="col-75">
+        <ins type="text">$2.25/gal</ins>
+      </div>
+
     </div>
     <div class="row">
       <div class="col-25">
         <label for="Price">Total Amount Due:</label>
+      </div>
+      <div class="col-75">
+        <ins></ins>
       </div>
     </div>
     <div class="row">
