@@ -1,3 +1,4 @@
+import java.util.*;
 /**
  * Write a description of class Quote here.
  * 
@@ -8,8 +9,8 @@ public class Quote
 {
     private int clientId;
     private double gallonsRequested;
-    private String deliveryDate;
-    private String requestDate;
+    private Date deliveryDate;
+    private Date requestDate;
     private String deliveryLocation;  
     private String deliveryContactName;
     private String deliveryContactPhone;
@@ -21,7 +22,7 @@ public class Quote
     public Quote() { 	
     }
     
-    public Quote(int clientId, double gallonsRequested, String deliveryDate, String requestDate,
+    public Quote(int clientId, double gallonsRequested, Date deliveryDate, Date requestDate,
 			String deliveryLocation, String deliveryContactName, String deliveryContactPhone,
 			String deliveryContactEmail, double suggestedPrice, double totalAmountDue) {
 		super();
@@ -54,19 +55,19 @@ public class Quote
 		this.gallonsRequested = gallonsRequested;
 	}
 
-	public String getDeliveryDate() {
+	public Date getDeliveryDate() {
 		return deliveryDate;
 	}
 
-	public void setDeliveryDate(String deliveryDate) {
+	public void setDeliveryDate(Date deliveryDate) {
 		this.deliveryDate = deliveryDate;
 	}
 
-	public String getRequestDate() {
+	public Date getRequestDate() {
 		return requestDate;
 	}
 
-	public void setRequestDate(String requestDate) {
+	public void setRequestDate(Date requestDate) {
 		this.requestDate = requestDate;
 	}
 
