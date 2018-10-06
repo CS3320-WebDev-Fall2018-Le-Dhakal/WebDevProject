@@ -22,4 +22,9 @@ public class QuoteHistory
     {
         quoteList.add(q);
     }
+    
+    public ArrayList<Quote> getQuoteList()
+    {
+        return quoteList;
+    }
 }
