@@ -2,16 +2,25 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
-var AuthorSchema = new Schema(
+var quoteSchema = new Schema(
   {
-    first_name: {type: String, required: true, max: 100},
-    family_name: {type: String, required: true, max: 100},
-    date_of_birth: {type: Date},
-    date_of_death: {type: Date},
+    client: {type: Schema.Types.ObjectID, ref: 'Client', required: true},
+    gallonsRequested: {type: Number},
+    requestDate: {type: Date},
+    deliveryDate: {type: Date},
+    deliveryAddress: {type: String, max: 255},
+    deliveryCity: {type: String, max: 100},
+    deliveryState: {type: String, max: 2},
+    deliveryZipCode: {type: Number, max: 10},
+    deliveryContactName: {type: String, max: 255},
+    deliveryContactPhone: {type: Number, max: 10},
+    deliveryContactEmail: {type: String, max: 255},
+    suggestedPrice: {type: Number},
+    totalAmountDue: {type: Number}
   }
 );
 
-// Virtual for author's full name
+/*// Virtual for author's full name
 AuthorSchema
 .virtual('name')
 .get(function () {
@@ -31,6 +40,7 @@ AuthorSchema
 .get(function () {
   return '/catalog/author/' + this._id;
 });
+*/
 
 //Export model
-module.exports = mongoose.model('Author', AuthorSchema);
+module.exports = mongoose.model('Quote', quoteSchema);
