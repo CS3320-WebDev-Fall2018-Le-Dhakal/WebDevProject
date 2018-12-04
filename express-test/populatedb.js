@@ -44,11 +44,10 @@ function clientCreate(full_name, address, city, state, zip_code, phone, email, c
 
 function quoteCreate(client, gallonsRequested, requestDate, deliveryDate, deliveryAddress, deliveryCity, deliveryState, deliveryZipCode, deliveryContactName,
   deliveryContactPhone, deliveryContactEmail, suggestedPrice, totalAmountDue, cb) {
-  quotedetail = {
-    client:client, 
+  quotedetail = { 
     gallonsRequested:gallonsRequested, 
     requestDate:requestDate, 
-    deliveryDate:DeliveryDate, 
+    deliveryDate:deliveryDate, 
     deliveryAddress:deliveryAddress, 
     deliveryCity:deliveryCity, 
     deliveryState:deliveryState, 
