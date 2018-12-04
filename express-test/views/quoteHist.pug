@@ -23,40 +23,19 @@ block content
           th Gallons
           th Rate
           th Total Price
-        tr
-          td 4
-          td 08/25/2018
-          td 08/26/2018
-          td 8800
-          td $2.25/gal
-          td $19800.00
-        tr
-          td 3
-          td 08/23/2018
-          td 08/24/2018
-          td 6500
-          td $2.26/gal
-          td $14690.00
-        tr
-          td 2
-          td 08/22/2018
-          td 08/23/2018
-          td 7000
-          td $2.25/gal
-          td $15750
-        tr
-          td 1
-          td 08/20/2018
-          td 08/21/2018
-          td 7000
-          td $2.28/gal
-          td $15960.00
-        tr
-          td
-          td
-          td
-          td
-          td
-          td
+        each quote in quote_list
+          th #{quote.id}
+          th #{quote.requestDate}
+          th #{quote.deliveryDate}
+          th #{quote.gallonsRequested}
+          th #{quote.rate}
+          th #{quote.totalAmountDue}
+        else
+          th No quotes.
+          th No quotes.
+          th No quotes.
+          th No quotes.
+          th No quotes.
+          th No quotes.
   footer
     p Fuel Prediction
