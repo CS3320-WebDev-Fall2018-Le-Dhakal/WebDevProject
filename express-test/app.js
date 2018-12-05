@@ -4,11 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-
-var indexRouter = require('./routes/index');
-var quoteHistRouter = require('./routes/quoteHist')
-var clientInfoRouter = require('./routes/clientInfo')
-var reqQuoteRouter = require('./routes/reqQuote')
+var mainRouter = require('./routes/index');
+//var quoteHistRouter = require('./routes/quoteHist')
+//var clientInfoRouter = require('./routes/clientInfo')
+//var reqQuoteRouter = require('./routes/reqQuote')
 
 var app = express();
 
@@ -18,7 +17,6 @@ mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,10 +28,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/quoteHist', quoteHistRouter);
-app.use('/clientInfo', clientInfoRouter);
-app.use('/reqQuote', reqQuoteRouter);
+app.use('/', mainRouter);
+//app.use('/quoteHist', quoteHistRouter);
+//app.use('/clientInfo', clientInfoRouter);
+//app.use('/reqQuote', reqQuoteRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -24,18 +24,20 @@ block content
           th Rate
           th Total Price
         each quote in quote_list
-          th #{quote.id}
-          th #{quote.requestDate}
-          th #{quote.deliveryDate}
-          th #{quote.gallonsRequested}
-          th #{quote.rate}
-          th #{quote.totalAmountDue}
+          tr
+            td #{quote.id}
+            td #{quote.requestDate}
+            td #{quote.deliveryDate}
+            td #{quote.gallonsRequested}
+            td #{quote.rate}
+            td #{quote.totalAmountDue}
         else
-          th No quotes.
-          th No quotes.
-          th No quotes.
-          th No quotes.
-          th No quotes.
-          th No quotes.
+          tr
+            td No quotes.
+            td No quotes.
+            td No quotes.
+            td No quotes.
+            td No quotes.
+            td No quotes.
   footer
     p Fuel Prediction

@@ -2,7 +2,7 @@ extends layout
 
 block content
   header
-    h2 title
+    h2=title
   section
     nav
       ul
@@ -14,10 +14,11 @@ block content
           a(href='reqQuote') Request a Quote
         li
           a(href='quoteHist') Quote History
-    ul(style='list-style-type: none') 
-      li Name: Muhammad
-      li Address: 892 Momona St, Honolulu, HI 96820
-      li Phone: 512-224-3335
-      li Email: muhammadMclovin69@gmail.com
+    each client in client_list
+      ul(style='list-style-type: none') 
+        li Name: #{client.full_name}
+        li Address: #{client.address}, #{client.city}, #{client.state} #{client.zip_code}
+        li Phone: #{client.phone}
+        li Email: #{client.email}
   footer
     p Fuel Prediction

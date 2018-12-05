@@ -42,7 +42,7 @@ function clientCreate(full_name, address, city, state, zip_code, phone, email, c
   }  );
 }
 
-function quoteCreate(client, gallonsRequested, requestDate, deliveryDate, deliveryAddress, deliveryCity, deliveryState, deliveryZipCode, deliveryContactName,
+function quoteCreate(gallonsRequested, requestDate, deliveryDate, deliveryAddress, deliveryCity, deliveryState, deliveryZipCode, deliveryContactName,
   deliveryContactPhone, deliveryContactEmail, suggestedPrice, totalAmountDue, cb) {
   quotedetail = { 
     gallonsRequested:gallonsRequested, 
